@@ -1,12 +1,19 @@
+:root {
+    --cloud: #ffffff;
+    --pixel: #252330;
+    --spark: #c9e700;
+    --daypack: #5d5b64;
+}
+
 body {
     font-family: "Nunito", serif;
     max-width: 1600px;
     margin: auto;
-    background-color: whitesmoke;
+    background-color: var(--cloud);
 }
 
 header {
-    background-color: #252330;
+    background-color: var(--pixel);
     height: 100px;
     display: flex;
     justify-content: space-between;
@@ -20,7 +27,7 @@ h1, h2, h3, h4 {
 }
 
 header h1 {
-    color: #c9e700;
+    color: var(--spark);
     line-height: 0.8;
     margin: 25px;
 }
@@ -34,7 +41,7 @@ header ul {
 }
 
 ul a {
-    color: whitesmoke;
+    color: var(--cloud);
     text-decoration: none;
 }
 
@@ -44,17 +51,26 @@ ul a:hover {
 
 h1 a {
     text-decoration: none;
-    color: #c9e700;
+    color: var(--spark);
 }
 
 .hero {
-    background: url(1600x750.svg);
     background-position: center;
     background-repeat: no-repeat;
     height: 750px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    position: relative;
+}
+
+.hero::before {
+    background-image: url(hero.jpg);
+    background-size: cover;
+    position: absolute;
+    inset: 0;
+    filter: brightness(60%);
+    content: '';
 }
 
 .hero h1 {
@@ -62,13 +78,15 @@ h1 a {
     padding: 0 1.5em;
     margin: 0;
     line-height: 1em;
+    color: var(--cloud);
+    isolation: isolate;
 }
 
 .cta {
-    background-color: #c9e700;
+    background-color: var(--spark);
     border: none;
     border-radius: 12px;
-    color: #252330;
+    color: var(--pixel);
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
@@ -77,6 +95,7 @@ h1 a {
     width: 8em;
     margin-left: 96px;
     margin-top: 1em;
+    isolation: isolate;
   }
 
 .articles {
@@ -99,12 +118,12 @@ h1 a {
 }
 
 .reviewers {
-    background-color: #252330;
+    background-color: var(--pixel);
     height: 350px;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    color: whitesmoke;
+    color: var(--cloud);
     text-align: center;
     margin-bottom: 30px;
 }
@@ -126,7 +145,7 @@ h1 a {
     margin-top: 50px;
     margin-bottom: 50px;
     width: 60%;
-    border: 10px solid #252330;
+    border: 10px solid var(--daypack);
     border-radius: 15px;
     font-size: 1.1em;
 }
@@ -155,6 +174,68 @@ h1 a {
 
 footer {
     height: 200px;
-    background-color: #252330;
+    background-color: var(--pixel);
 }
 
+.membershiptable h1 {
+    text-align: center;
+    padding: 2em;
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+    border: 7px solid var(--daypack);
+    border-radius: 50px;
+    text-align: center;
+    table-layout: fixed;
+    margin-bottom: 3em;
+}
+
+th {
+    font-size: 2em;
+}
+
+td {
+    font-size: 1.5em;
+}
+
+th, td {
+    border: 5px solid var(--daypack);
+    padding: 1em;
+}
+
+.signup {
+    background-color: var(--pixel);
+}
+
+.signup h1 {
+    text-align: center;
+    padding: 2em;
+    color: var(--cloud);
+}
+
+.signup form {
+    padding-left: 2em;
+    padding-bottom: 2em;
+}
+
+label {
+    color: var(--cloud);
+}
+
+input[type=text],
+input[type=email] {
+    width: 250px;
+    height: 25px;
+}
+
+input[type=submit] {
+    padding: 5px 15px;
+    margin-top: 5px;
+    background: var(--spark);
+    border: 0 none;
+    cursor: pointer;
+    border-radius: 5px;
+}
